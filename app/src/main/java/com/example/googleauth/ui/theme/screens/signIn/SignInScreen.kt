@@ -44,6 +44,8 @@ import androidx.navigation.compose.rememberNavController
 import com.example.googleauth.R
 import com.example.googleauth.models.AuthState
 import com.example.googleauth.models.AuthViewModel
+import com.example.googleauth.navigation.ROUT_HOME
+import com.example.googleauth.navigation.ROUT_SIGNIN
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
@@ -81,8 +83,8 @@ fun SignInScreen(navController: NavHostController, authViewModel: AuthViewModel 
 
     LaunchedEffect(authState) {
         if (authState is AuthState.Success) {
-            navController.navigate("home") {
-                popUpTo("signIn") { inclusive = true }
+            navController.navigate(ROUT_HOME) {
+                popUpTo(ROUT_SIGNIN) { inclusive = true }
             }
         }
     }
