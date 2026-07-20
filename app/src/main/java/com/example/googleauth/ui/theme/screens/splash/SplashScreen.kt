@@ -38,7 +38,7 @@ fun SplashScreen(navController: NavHostController){
 
         val coroutine = rememberCoroutineScope()
         coroutine.launch {
-            delay(3000)
+            delay(1200)
             navController.navigate(ROUT_SIGNIN)
 
         }
